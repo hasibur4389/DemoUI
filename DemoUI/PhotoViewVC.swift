@@ -10,6 +10,7 @@ import UIKit
 class PhotoViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet var enlargeImage: UIImageView!
+    var timer: Timer!
     
     var images = [UIImage]()
     
@@ -19,15 +20,22 @@ class PhotoViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Do any additional setup after loading the view.
         
         // set ImageView to slideshow all the images repeatedly
-        setImages()
+        startTimer()
     }
     
     // set ImageView to slideshow all the images repeatedly
-    func setImages(){
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setImages), userInfo: nil, repeats: true)
         
-        
+       
     }
-    
+                                     
+    @objc func setImages(){
+        print("Startin Timer...")
+        enlargeImage.image = images.randomElement()
+        
+            
+        }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
@@ -36,18 +44,27 @@ class PhotoViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionCell
-        cell.slidingImage.image = images[indexPath.row]
-        cell.slidingImage.layer.cornerRadius = 10.0
+       // cell.slidingImage.image = images[indexPath.row]
+        cell.layer.cornerRadius = 10.0
+        cell.myLabel.text = "Image no. \(indexPath.row)"
         
         return cell
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       print("In didSelect")
-        enlargeImage.image = images[indexPath.item]
-        print("Done")
-    }
+    
+    
+    
+    // making the image show in the canvas
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//       print("In didSelect")
+//        enlargeImage.image = images[indexPath.item]
+//        print("Done")
+//    }
+    
+    
+    
     
     // delegate flowlayout
     
