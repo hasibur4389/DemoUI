@@ -102,21 +102,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FOe-Jt-q0Z">
                                 <rect key="frame" x="0.0" y="59" width="393" height="427"/>
                             </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="S5p-UM-at6">
+                                <rect key="frame" x="30" y="557" width="333" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nTA-vc-Nln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="CVG-pq-9IX" firstAttribute="top" secondItem="FOe-Jt-q0Z" secondAttribute="bottom" constant="132" id="8mY-mj-1Sh"/>
+                            <constraint firstItem="S5p-UM-at6" firstAttribute="leading" secondItem="nTA-vc-Nln" secondAttribute="leading" constant="30" id="GJH-PO-j2E"/>
                             <constraint firstItem="nTA-vc-Nln" firstAttribute="bottom" secondItem="CVG-pq-9IX" secondAttribute="bottom" id="H5Q-Dq-CHP"/>
                             <constraint firstItem="nTA-vc-Nln" firstAttribute="trailing" secondItem="FOe-Jt-q0Z" secondAttribute="trailing" id="Sia-Ah-AoO"/>
                             <constraint firstItem="nTA-vc-Nln" firstAttribute="trailing" secondItem="CVG-pq-9IX" secondAttribute="trailing" id="TK2-NE-vPa"/>
                             <constraint firstItem="CVG-pq-9IX" firstAttribute="leading" secondItem="nTA-vc-Nln" secondAttribute="leading" id="clg-Sv-g5h"/>
+                            <constraint firstItem="S5p-UM-at6" firstAttribute="top" secondItem="FOe-Jt-q0Z" secondAttribute="bottom" constant="71" id="ibo-Z1-KfL"/>
+                            <constraint firstItem="CVG-pq-9IX" firstAttribute="top" secondItem="S5p-UM-at6" secondAttribute="bottom" constant="57" id="j1Z-1t-cYJ"/>
                             <constraint firstItem="FOe-Jt-q0Z" firstAttribute="leading" secondItem="nTA-vc-Nln" secondAttribute="leading" id="jhk-nH-r9E"/>
+                            <constraint firstItem="nTA-vc-Nln" firstAttribute="trailing" secondItem="S5p-UM-at6" secondAttribute="trailing" constant="30" id="jpb-PE-KiK"/>
                             <constraint firstItem="FOe-Jt-q0Z" firstAttribute="top" secondItem="nTA-vc-Nln" secondAttribute="top" id="qSg-vd-ebm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="enlargeImage" destination="FOe-Jt-q0Z" id="jHy-9Q-N6J"/>
+                        <outlet property="myProgressView" destination="S5p-UM-at6" id="P1R-aZ-F7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkN-VQ-8Pv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

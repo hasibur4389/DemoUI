@@ -9,14 +9,21 @@ import UIKit
 
 class PhotoViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet var myProgressView: UIProgressView!
     @IBOutlet var enlargeImage: UIImageView!
     var timer: Timer!
+    var progressViewInterval: Float!
+    
+    var currentIndex = 0
+    
     
     var images = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("IN PhotoViewVC \(images.count)")
+        myProgressView.progress = 0.0
+        progressViewInterval = (1.0/Float(images.count))
         // Do any additional setup after loading the view.
         
         // set ImageView to slideshow all the images repeatedly
@@ -29,10 +36,34 @@ class PhotoViewVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         
        
     }
+    //View Disapear
+//    override func viewDidAppear(_ animated: Bool) {
+//        images = []
+//        myProgressView.progress = 0.0
+//    }
                                      
     @objc func setImages(){
         print("Startin Timer...")
-        enlargeImage.image = images.randomElement()
+       // enlargeImage.image = images.randomElement()
+        
+        // taking the images from the array sequently
+        enlargeImage.image = images[currentIndex]
+                currentIndex = (currentIndex + 1) % images.count
+        
+        // progressView
+        print("progress is \(myProgressView.progress)")
+        if myProgressView.progress == 1.0{
+            print("TRUE")
+            myProgressView.progress = 0.0
+            currentIndex = 0
+            timer.invalidate()
+                startTimer()
+            // code
+           
+        }
+        myProgressView.progress += progressViewInterval
+        myProgressView.setProgress(myProgressView.progress, animated: true)
+      
         
             
         }
