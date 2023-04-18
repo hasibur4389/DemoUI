@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D06184A2-5A56-4273-95CA-D14CA01B6F6D"
+            uuid = "9459386A-183F-4FB5-B7A6-F2D55CE03D4F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DemoUI/PhotoViewVC.swift"
+            filePath = "DemoUI/ImagePreview.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "setImages(delegate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

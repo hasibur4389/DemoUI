@@ -50,7 +50,7 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PhotoViewVC") as! PhotoViewVC // storeyboard id for PhotoViewVC used  no segue is used
         vc.images = images
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
