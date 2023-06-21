@@ -35,6 +35,11 @@ class ViewController: UIViewController, PHPickerViewControllerDelegate {
                 if let image = object as? UIImage{
                     self.images.append(image)
                     print(self.images.count)
+                    // better way
+                   //   DispatchQueue.main.async {
+                    //        if results.count == self.images.count{
+                     //           self.goTo()
+                     //       }
                     print(image)
                 }
             }
